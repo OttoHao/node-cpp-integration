@@ -39,7 +39,7 @@ npm install -g node-gyp
 
 The `binding.gyp` file
 
-A binding.gyp file describes the configuration to build your module, in a JSON-like format. This file gets placed in the root of your package, alongside package.json.
+- a binding.gyp file describes the configuration to build your module, in a JSON-like format. This file gets placed in the root of your package, alongside package.json.
 
 Commands
 | **Command**   | **Description**
@@ -48,6 +48,11 @@ Commands
 | `clean`       | Removes the `build` directory if it exists
 | `configure`   | Generates project build files for the current platform
 | `rebuild`     | Runs `clean`, `configure` and `build` all in a row
+
+Options
+- Node version
+- Platform (ex. win32)
+- CPU Architecture (ex. x64)
 
 ___
 ### Direct use of V8
@@ -68,16 +73,16 @@ ___
 ### Node-API
 https://nodejs.org/api/n-api.html
 
-What is Node-API?
+What is Node-API (N-API)?
 
 - Node-API is an API for building native addons. 
-- It is independent from the underlying JavaScript runtime (e.g. V8) and is maintained as part of `Node.js` itself.  (official)
+- It is independent from the underlying JavaScript runtime (e.g. V8) and is maintained as part of `Node.js` itself.  (official, from Node v8)
 - This API will be `Application Binary Interface (ABI)` stable across versions of Node.js. 
 
 It is intended to insulate addons from changes in the underlying JavaScript engine and allow modules compiled for one version to run on later versions of Node.js without recompilation.
 
 Two implementations:
-- Node-API: C-based API guaranteeing ABI stability across different node versions as well as JavaScript engines. (Node-API was previously known as N-API.)
+- Node-API: C-based API guaranteeing ABI stability across different node versions as well as JavaScript engines.
 - node-addon-api: header-only C++ wrapper classes which simplify the use of the C-based Node-API.
 
 ___
@@ -87,7 +92,7 @@ What is FFI?
 - can be used to create bindings to native libraries without writing any C++ code.
 
 Two implementations:
-- node-ffi: https://github.com/node-ffi/node-ffi
+- node-ffi: https://github.com/node-ffi/node-ffi (deprecated? only support until Node v10)
 ``` bash
 npm install ffi
 ```
