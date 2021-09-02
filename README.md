@@ -50,7 +50,7 @@ Commands
 | `rebuild`     | Runs `clean`, `configure` and `build` all in a row
 
 Options
-- Node version
+- Node version (download headers for the target version)
 - Platform (ex. win32)
 - CPU Architecture (ex. x64)
 
